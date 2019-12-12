@@ -1,0 +1,29 @@
+<h1>Dreams List</h1>
+
+<a routerLink="/dreams/create">Add New Dream</a>
+
+<form>
+  <label for="search">Search: </label>
+  <input #searchInput name="search" id="search" />
+  <button type="button" (click)="search(searchInput.value)">Search</button>
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Tag</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let dream of dreams">
+      <td>{{dream.name}}</td>
+      <td>{{dream.description}}</td>
+      <td>{{dream.tag}}</td>
+      <td>
+        <button (click)="view(dream.name)">View Details</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

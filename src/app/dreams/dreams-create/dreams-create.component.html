@@ -1,0 +1,24 @@
+
+<h2>Add New Dream</h2>
+<form #dreamForm="ngForm" (submit)="submitDream(dreamForm.form.value)">
+  <div>
+    <label for="name">Name: </label>
+    <input id="name" name="name" ngModel >
+  </div>
+  <div>
+    <label for="description">Description: </label>
+    <input id="description" name="description" ngModel>
+  </div>
+  <div>
+    <label for="details">Details: </label>
+    <textarea id="details" name="details" ngModel></textarea>
+  </div>
+  <div>
+    <label for="tag">Tag: </label>
+    <select id="tag" name="tag" ngModel >
+      <option>Dream</option>
+      <option>Nightmare</option>
+    </select>
+  </div>
+  <button type="submit">Submit</button>
+</form>
